@@ -2,7 +2,6 @@
 import unittest
 from server import app 
 
-
 class TestApp(unittest.TestCase):
 
     def test_home(self):
