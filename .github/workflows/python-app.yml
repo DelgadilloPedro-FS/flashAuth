@@ -9,6 +9,9 @@ on:
   pull_request:
     branches: [ "main", "dev", "test" ]
 
+env:
+  APP_SECRET_KEY: apples
+
 permissions:
   contents: read
 
