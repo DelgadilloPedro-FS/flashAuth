@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+</head>
+<body>
+
+  <h1>Settings</h1>
+
+  {% if nickname %}
+    <p>Nickname: {{ nickname }}</p>
+  {% endif %}
+
+  {% if user_info.get('userinfo', {}).get('picture') %}
+    <img src="{{ user_info.get('userinfo', {}).get('picture') }}" alt="Profile picture">
+  {% endif %}
+
+</body>
+</html>
