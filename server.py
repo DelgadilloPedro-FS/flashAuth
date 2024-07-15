@@ -106,6 +106,19 @@ def dashboard():
         pretty=json.dumps(session.get("user"), indent=4),  # Pretty-printed user data for display
     )
 
+@app.route("/settings")
+@requires_auth
+def settings():
+    # Get the user information from the session
+    user_info = session.get('user', {})
+    nickname = user_info.get('userinfo', {}).get('nickname')  # Access nickname from nested dictionary
+
+    # Render the template and pass the nickname
+    return render_template(
+        "settings.html",
+        nickname=nickname,
+        user_info=user_info 
+    )
 
 # Run the application (host set to 0.0.0.0 for external access)
 if __name__ == "__main__":
